@@ -63,10 +63,11 @@ viz_df |>
   ) +
   theme(text = element_text(size = 14, family = "Courier")) +
 labs(
-  title = "k = {closest_state}",
+  title = "forecasting passengers with k = {closest_state}",
   x = "month", y = "passengers"
 ) +
 transition_states(k) +
 enter_appear() -> p
 
 animate(p, renderer = gifski_renderer())
+anim_save("./harmonic_regression.gif", path = ".")
